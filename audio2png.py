@@ -90,3 +90,10 @@ def bands2png(bands,filename):
     w = png.Writer(pngbands.shape[1],pngbands.shape[0],greyscale=True)
     w.write(f,pngbands)
     f.close()
+    
+if __name__ == '__main__':
+    folders = os.listdir(os.getcwd()+'/audio/')
+    for folder in folders:
+        if folder[0]!='.':
+            print 'Writing images for ' + folder
+            songs2png(folder)
